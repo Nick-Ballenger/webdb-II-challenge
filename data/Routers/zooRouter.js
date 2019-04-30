@@ -13,7 +13,7 @@ const knexConfig = {
 
 const db = knex(knexConfig);
 
-
+//Get Zoos
 router.get('/', async (req, res) => {
     
     try {
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 		res.status(500).json({ error: 'Something went wrong getting the data from the server' });
 	}
 });
-
+//Get Zoos by ID
 router.get('/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
@@ -39,6 +39,7 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
+//Add Zoos
 router.post('/', async (req, res) => {
     
     try {
@@ -52,6 +53,8 @@ router.post('/', async (req, res) => {
 	}
 });
 
+
+//delete Zoo by ID
 router.delete('/:id', async (req, res) => {
 	
 	try {
@@ -65,6 +68,7 @@ router.delete('/:id', async (req, res) => {
 	}
 });
 
+//Update Zoo by ID
 router.put('/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
